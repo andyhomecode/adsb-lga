@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run ADS-B Monitor",
+			"type": "shell",
+			"command": "/home/andy/code/adsb-lga/.venv/bin/python",
+			"args": [
+				"main.py"
+			],
+			"isBackground": true,
+			"group": "build"
+		}
+	]
+}
