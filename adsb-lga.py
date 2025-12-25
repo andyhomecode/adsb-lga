@@ -1,6 +1,7 @@
 import requests
 import time
 import argparse
+import re
 
 # API endpoint for ADS-B data
 base_url = "https://api.adsb.lol/v2/point"
@@ -75,6 +76,9 @@ def get_route_origin(callsign):
                 origin = airports[0]
                 origin_iata = origin.get('iata')
                 origin_name = origin.get('name')
+                if origin_name:
+                    origin_name = re.sub(r'\b(?:International|Douglas|Hilton Head|Hartsfield Jackson|Airport|Regional|Municipal|Field)\b', '', origin_name, flags=re.IGNORECASE).strip()
+                    origin_name = ' '.join(origin_name.split())  # Normalize spaces
                 dest_iata = None
                 if len(airports) >= 2:
                     dest = airports[1]
