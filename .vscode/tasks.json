@@ -6,7 +6,7 @@
 			"type": "shell",
 			"command": "/home/andy/code/adsb-lga/.venv/bin/python",
 			"args": [
-				"main.py"
+				"adsb-lga.py"
 			],
 			"isBackground": true,
 			"group": "build"
