@@ -20,4 +20,12 @@ while true; do
         echo "$output" | figlet
     fi
     sleep 5
+    output=$($PYTHON_PATH $SCRIPT_PATH --route)
+    if [ -z "$output" ]; then
+        echo -n "*"
+    else
+        echo ""
+        echo "$output" | figlet
+    fi
+    sleep 5
 done

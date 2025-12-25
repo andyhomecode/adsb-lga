@@ -1,6 +1,6 @@
 # ADS-B LGA Flights
 
-This Python project fetches ADS-B data from api.adsb.lol and filters for commercial flights (category A3) on approach to Laguardia airport. It uses a smaller bounding box around Laguardia (lat: 40.6875, lon: -73.9845, radius: 3 km) to focus on approaching flights. It displays flights with altitude around 20,000 ft and track around 37 degrees, ranked by latitude (north to south).
+This Python project fetches ADS-B data from api.adsb.lol and filters for commercial flights (category A3) on approach to Laguardia airport. It uses a smaller bounding box around Laguardia (lat: 40.6875, lon: -73.9845, radius: 3 km) to focus on approaching flights. It displays flights with altitude around 20,000 ft and track around 37 degrees, ranked by latitude (north to south), including origin airport code and name.
 
 ## Requirements
 
@@ -30,11 +30,13 @@ The script will fetch data every 20 seconds and print the filtered flights.
 For piping into other programs, use command-line options:
 - `--flight`: Output only the flight ID of the top sorted entry and exit.
 - `--airline`: Output only the airline name of the top sorted entry and exit.
+- `--route`: Output only the origin IATA code and origin name of the top sorted entry and exit.
 
 Examples:
 ```
 python adsb-lga.py --flight
 python adsb-lga.py --airline
+python adsb-lga.py --route
 ```
 
 ### Display Script with Figlet
